@@ -5,7 +5,7 @@ import stripe from 'tipsi-stripe'
 import Header from './components/Header'
 import MenuItem from './components/MenuItem'
 import ApplePayScreen from './scenes/ApplePayScreen'
-// import AndroidPayScreen from './scenes/AndroidPayScreen'
+import AndroidPayScreen from './scenes/AndroidPayScreen'
 import CardFormScreen from './scenes/CardFormScreen'
 import CustomCardScreen from './scenes/CustomCardScreen'
 import CustomBankScreen from './scenes/CustomBankScreen'
@@ -24,11 +24,11 @@ export default class Root extends PureComponent {
         index: 0,
         isDrawerOpen: false,
         routes: [
-            ApplePayScreen,
-            // Platform.select({
-            //     ios: ApplePayScreen,
-            //     android: AndroidPayScreen,
-            // }),
+            // ApplePayScreen,
+            Platform.select({
+                ios: ApplePayScreen,
+                android: AndroidPayScreen,
+            }),
             CardFormScreen,
             CustomCardScreen,
             CustomBankScreen,
